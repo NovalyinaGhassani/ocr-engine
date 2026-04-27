@@ -32,15 +32,15 @@ This system is applicable in real-world operational environments such as:
 ## 👥 Team
 This project was developed collaboratively by:
 - Novalyina Ghassani – OCR pipeline & data processing  
-- Hilmi Fauziyyah – System integration  & Backend/API development  
+- Hilmi Fauziyyah – System integration & Backend/API development  
 
 ---
 
 ## 🧠 System Architecture
-- **FastAPI** handles incoming requests  
-- **RabbitMQ** manages task queue asynchronously  
-- **Worker** processes OCR tasks  
-- **OCR Engine** extracts and cleans text  
+
+```
+User → FastAPI → RabbitMQ Queue → Worker → OCR Processing → Structured Output
+```
 
 ---
 
@@ -70,50 +70,51 @@ This project was developed collaboratively by:
 ```bash
 git clone https://github.com/NovalyinaGhassani/ocr-engine.git
 cd ocr-engine
+```
 
 ### 2. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ### 3. Run FastAPI Server
+```bash
 uvicorn main:app --reload
+```
 
 ### 4. Start Worker (RabbitMQ must be running)
+```bash
 python worker.py
+```
 
 ---
 
 ## 📊 Example Workflow
 
-Input:
+**Input:**  
+- Scanned document / image  
 
-Scanned document / image
+**Process:**  
+- OCR extraction  
+- Text cleaning  
+- Data structuring  
 
-Process:
-
-OCR extraction
-Text cleaning
-Data structuring
-
-Output:
-
-Structured text data ready for reporting
+**Output:**  
+- Structured text data ready for reporting  
 
 ---
 
 ## 📈 Impact
-
 This project demonstrates:
-
-Ability to design scalable systems using asynchronous architecture
-Practical implementation of OCR for real operational problems
-Strong understanding of data processing and automation workflows
-Application of AI/ML tools in industrial contexts
+- Ability to design scalable systems using asynchronous architecture  
+- Practical implementation of OCR for real operational problems  
+- Strong understanding of data processing and automation workflows  
+- Application of AI/ML tools in industrial contexts  
 
 ---
 
 ## 🔮 Future Improvements
-Add model optimization for higher OCR accuracy
-Implement UI dashboard for monitoring
-Integrate database for persistent storage
-Add support for multiple document formats
-
+- Add model optimization for higher OCR accuracy  
+- Implement UI dashboard for monitoring  
+- Integrate database for persistent storage  
+- Add support for multiple document formats  
